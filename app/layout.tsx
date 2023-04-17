@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nfont.className}>
-        <Modal isOpen />
+        <Modal isOpen title="Login" actionlabel="Submit" />
         <Navbar />
         {children}
       </body>
