@@ -56,6 +56,7 @@ const LoginModal = () => {
       <Input
         id="email"
         label="Email"
+        type="email"
         disabled={isLoading}
         register={register}
         errors={errors}
@@ -65,6 +66,7 @@ const LoginModal = () => {
       <Input
         id="password"
         label="Password"
+        type="password"
         disabled={isLoading}
         register={register}
         errors={errors}
@@ -86,7 +88,9 @@ const LoginModal = () => {
         outline
         label="Continue With Github"
         icon={AiFillGithub}
-        onClick={() => {}}
+        onClick={() => {
+          signIn("github");
+        }}
       />
       <div className="text-neutral-500  mt-4 font-light">
         <div className="justify-center flex flex-row items-center gap-2">
