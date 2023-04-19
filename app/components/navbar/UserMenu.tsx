@@ -54,7 +54,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                 <hr />
                 <MenuItem
                   onClick={() => {
-                    toast.success("Logged out successfully");
+                    // toast.success("Logged out successfully");
                     signOut();
                   }}
                   label="Logout"
