@@ -8,6 +8,8 @@ import { categories } from "../navbar/Categories";
 import CategoryInput from "../inputs/CategoryInput";
 import { FieldValues, useForm } from "react-hook-form";
 import CountrySelect from "../inputs/CountrySelect";
+import dynamic from "next/dynamic";
+// import Map from "../Map";  -> to be imported in different way
 
 const RentModal = () => {
   const rentModal = useRentModal();
@@ -49,6 +51,13 @@ const RentModal = () => {
   const location = watch("location");
   console.log("cat-", category);
   console.log("loc-", location);
+
+  // map
+  // re import he map with the new location when location changes in country select
+  const Map = useMemo(
+    () => dynamic(() => import("../Map"), { ssr: false }),
+    [location]
+  );
 
   const setCustomValue = (id: string, value: any) => {
     //   create a custom key value for react form
@@ -120,6 +129,7 @@ const RentModal = () => {
           }}
           value={location}
         />
+        <Map center={location?.latlng} />
       </div>
     );
   }
