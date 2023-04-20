@@ -10,6 +10,7 @@ import { FieldValues, useForm } from "react-hook-form";
 import CountrySelect from "../inputs/CountrySelect";
 import dynamic from "next/dynamic";
 import Counter from "../inputs/Counter";
+import ImageUpload from "../inputs/ImageUpload";
 // import Map from "../Map";  -> to be imported in different way
 
 const RentModal = () => {
@@ -55,6 +56,7 @@ const RentModal = () => {
   const guestCount = watch("guestCount"); //default 1 as defined in react form above
   const roomCount = watch("roomCount");
   const bathroomCount = watch("bathroomCount");
+  const imageSrc = watch("imageSrc");
 
   // map
   // re import he map with the new location when location changes in country select
@@ -164,6 +166,21 @@ const RentModal = () => {
           subtitle="How many bathrooms do you have?"
           value={bathroomCount}
           onChange={(value) => setCustomValue("bathroomCount", value)}
+        />
+      </div>
+    );
+  }
+
+  if (step === STEPS.IMAGES) {
+    bodyContent = (
+      <div className="flex flex-col gap-8">
+        <Heading
+          title="Add a photo of your place"
+          subtitle="Show guestswhat your place looks like!"
+        />
+        <ImageUpload
+          value={imageSrc}
+          onChange={(link) => setCustomValue("imageSrc", link)}
         />
       </div>
     );
