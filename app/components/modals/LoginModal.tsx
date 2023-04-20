@@ -40,6 +40,7 @@ const LoginModal = () => {
   // when form is submitted (handleSubmit executes) register checks each input by checking the properties passed as an argument eg required here and resolves to valid or invalid inputs also register create key value in the react form with key as id here
   // handle submit checks for validation and if either of register is invalid it doesn't executes
 
+  // this onsubmit is wrapped within handleSubmit so that the data can be passed through react hook form to onSubmit function as data
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
     signIn("credentials", { ...data, redirect: false }).then((callback) => {
