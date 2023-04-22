@@ -31,7 +31,7 @@ export default async function RootLayout({
         <RentModal />
         {/* <Modal isOpen title="Login" actionlabel="Submit" /> */}
         <Navbar currentUser={currentUser} />
-        {children}
+        <div className="pb-20 pt-20">{children}</div>
       </body>
     </html>
   );
