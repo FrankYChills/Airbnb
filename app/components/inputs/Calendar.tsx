@@ -24,7 +24,7 @@ const Calendar: React.FC<CalendarProps> = ({
       direction="vertical"
       showDateDisplay={false}
       minDate={new Date()}
-      disabledDates={disabledDates}
+      disabledDates={disabledDates} // the ignored date will be +5:30 as saved in the DB is -05:30
     />
   );
 };
