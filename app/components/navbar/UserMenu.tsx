@@ -13,6 +13,7 @@ import { toast } from "react-hot-toast";
 import { User } from "@prisma/client";
 import { SafeUser } from "@/app/types";
 import useRentModal from "@/app/hooks/useRentModal";
+import { useRouter } from "next/navigation";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null;
@@ -24,6 +25,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
   const loginModal = useLoginModal();
   const toggleOpen = useCallback(() => setIsOpen((prev) => !prev), []);
   const rentModal = useRentModal();
+  const router = useRouter();
 
   const onRent = useCallback(() => {
     if (!currentUser) {
@@ -55,7 +57,12 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
           <div className="flex flex-col cursor-pointer">
             {currentUser ? (
               <>
-                <MenuItem onClick={() => {}} label="My trips" />
+                <MenuItem
+                  onClick={() => {
+                    router.push("/trips");
+                  }}
+                  label="My trips"
+                />
                 <MenuItem onClick={() => {}} label="My favourites" />
                 <MenuItem onClick={() => {}} label="My reservations" />
                 <MenuItem onClick={() => {}} label="My properties" />
