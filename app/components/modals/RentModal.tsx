@@ -58,8 +58,8 @@ const RentModal = () => {
   // watch category key(watches value though) in the react form
   const category = watch("category");
   const location = watch("location");
-  console.log("cat-", category);
-  console.log("loc-", location);
+  // console.log("cat-", category);
+  // console.log("loc-", location);
   const guestCount = watch("guestCount"); //default 1 as defined in react form above
   const roomCount = watch("roomCount");
   const bathroomCount = watch("bathroomCount");

@@ -107,8 +107,8 @@ const Categories = () => {
   //pathname gives the path before any params and main domain "/"
   const isMainPage = pathname === "/";
 
-  console.log(pathname);
-  console.log(isMainPage);
+  // console.log(pathname);
+  // console.log(isMainPage);
 
   if (!isMainPage) {
     return null;

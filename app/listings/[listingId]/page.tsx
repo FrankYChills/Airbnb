@@ -9,7 +9,7 @@ interface ListingPageProps {
 }
 
 const ListingPage = async ({ params: { listingId } }: ListingPageProps) => {
-  console.log("here babe");
+  // console.log("here babe");
 
   const listing = await getListingById(listingId);
   const currentUser = await getCurrentUser();
