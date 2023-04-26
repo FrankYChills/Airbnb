@@ -33,6 +33,7 @@ const CategoryBox: React.FC<CategoryBoxProps> = ({
     };
     // remove label from param if already present in the url
     if (params?.get("category") === label) {
+      // @ts-ignore
       delete updatedQuery.category;
     }
 
